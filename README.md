@@ -25,10 +25,22 @@ const client = new Kucoin()
 // Maximum 100 Symbol / Connection!
 const symbols = ["BTC-USDT", "ETH-BTC"]
 
-let test = async () => {
-  let connection = await client.MarketMatches(symbols, (e) => {
-    console.log(e)
-  })
+// Callback function on socket data
+const callback = (e) => {
+  console.log(e)
+}
+
+let test = async (level = 1) => {
+  if (level === 1) {
+    // Market Matches
+    let connection = await client.MarketMatches(symbols, callback)
+  } else if (level === 2) {
+    // Market Level 2 Data
+    let connection = await client.MarketLevel2(symbols, callback)
+  } else if (level === 3) {
+    // Market Level 3 Data
+    let connection = await client.MarketLevel3(symbols, callback)
+  }
 
   // With calling connection() it close the socket
   setTimeout(() => {

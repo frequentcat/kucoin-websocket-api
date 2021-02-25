@@ -26,6 +26,15 @@ class Kucoin_API {
     return result
   }
 
+  async MarketLevel3(symbols, callback) {
+    let endpoint = await this.getSocketEndpoint()
+
+    let result = await openMarketLevel3(endpoint, symbols, callback)
+
+    // Return Close function
+    return result
+  }
+
   // Kucoin token methods
 
   async getPublicWsToken() {
