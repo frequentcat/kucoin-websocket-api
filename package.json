@@ -6,17 +6,24 @@
   "scripts": {
     "test": "jest"
   },
-  "keywords": ["kucoin","websocket","api","node"],
+  "keywords": [
+    "kucoin",
+    "websocket",
+    "api",
+    "node"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/katzenmalen/kucoin-websocket-api.git"
   },
   "author": "Valamidev",
   "contributor": [
-  { "name" : "Katzenmalen",
-    "email" : "@katzenmalen",
-    "url" : "http://katzenmalen.de/"
-  }],
+    {
+      "name": "Katzenmalen",
+      "email": "@katzenmalen",
+      "url": "http://katzenmalen.de/"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",

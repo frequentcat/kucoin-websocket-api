@@ -116,7 +116,7 @@ const symbols = [
 
 test("Get connection endpoint", async () => {
   let connection = await client.MarketMatches(symbols, () => {})
-
+  console.log(connection);
   expect(connection).toBeInstanceOf(Function)
 
   connection()
@@ -124,7 +124,7 @@ test("Get connection endpoint", async () => {
 
 test("Get connection endpoint", async () => {
   let connection = await client.MarketLevel2(symbols, () => {})
-
+  
   expect(connection).toBeInstanceOf(Function)
 
   connection()

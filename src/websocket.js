@@ -4,7 +4,7 @@ const util = require("./websocket_util")
 const openWebSocket = require("./open-websocket")
 
 
-const openMarketCandles = async (BASE, symbols, type, cb) => {
+const openMarketCandles = async (BASE, symbol, type, cb) => {
   const w = await openWebSocket(`${BASE}`)
 
   w.onmessage = (msg) => {
@@ -18,10 +18,13 @@ const openMarketCandles = async (BASE, symbols, type, cb) => {
       //Add heartbeat
       setInterval(() => {
         w.send(util.ping())
-      }, 20000)
-
+      }, 20000);
       // Subscribe
-      w.send(util.subscribe("/market/candles:", symbol, "_", type))
+      let subCandle = "" + symbol + "_" + type;
+      //w.send(util.subscribe("/market/candles:", symbols))
+      let symbols = [];
+      symbols.push(subCandle);
+      w.send(util.subscribe("/market/candles:", symbols))
     }
 
     if (msg_data.type == "message") {
@@ -128,4 +131,4 @@ const openMarketLevel3 = async (BASE, symbols, cb) => {
   }
 }
 
-module.exports = { openMarketMatches, openMarketLevel2, openMarketLevel3 }
+module.exports = { openMarketCandles, openMarketMatches, openMarketLevel2, openMarketLevel3 }
