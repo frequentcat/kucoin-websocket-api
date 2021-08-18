@@ -8,6 +8,15 @@ class Kucoin_API {
     this.baseURL = "https://openapi-v2.kucoin.com"
   }
 
+  async MarketCandles(symbols, type, callback) {
+    let endpoint = await this.getSocketEndpoint()
+
+    let result = await openMarketCandles(endpoint, symbols, type, callback)
+
+    // Return Close function
+    return result
+  }
+
   async MarketMatches(symbols, callback) {
     let endpoint = await this.getSocketEndpoint()
 

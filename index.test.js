@@ -7,6 +7,8 @@ const Kucoin = require("./index")
 
 const client = new Kucoin()
 
+const symbol = "BTC-USDT"
+const interval = "1m"
 const symbols = [
   "ACAT-BTC",
   "ACAT-ETH",
@@ -110,6 +112,8 @@ const symbols = [
   "CS-KCS"
 ]
 
+
+
 test("Get connection endpoint", async () => {
   let connection = await client.MarketMatches(symbols, () => {})
 
@@ -120,6 +124,15 @@ test("Get connection endpoint", async () => {
 
 test("Get connection endpoint", async () => {
   let connection = await client.MarketLevel2(symbols, () => {})
+
+  expect(connection).toBeInstanceOf(Function)
+
+  connection()
+})
+
+
+test("Get connection endpoint", async () => {
+  let connection = await client.MarketCandles(symbol, interval, () => {})
 
   expect(connection).toBeInstanceOf(Function)
 

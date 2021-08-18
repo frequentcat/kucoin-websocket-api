@@ -9,7 +9,12 @@ Fault tolerant auto-reconnecting Websocket API for Kucoin!
 - It has similar implementation like the binance-api-node
 
 **DEVELOPMENT STATE:**
-- This package give support only for Public endpoint.
+This package give support only for Public endpoint:
+- market candles
+- market matches
+- market data L2
+- market data L3
+
 
 **Limitations:**
 - Kucoin allow only 100 Symbol / connection and 5 connection total!

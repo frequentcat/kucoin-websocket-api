@@ -1,6 +1,6 @@
 {
   "name": "kucoin-websocket-api",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Websocket API for Kucoin",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,14 @@
   "keywords": ["kucoin","websocket","api","node"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/valamidev/kucoin-websocket-api.git"
+    "url": "https://github.com/katzenmalen/kucoin-websocket-api.git"
   },
   "author": "Valamidev",
+  "contributor": [
+  { "name" : "Katzenmalen",
+    "email" : "@katzenmalen",
+    "url" : "http://katzenmalen.de/"
+  }],
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
